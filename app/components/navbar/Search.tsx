@@ -1,4 +1,5 @@
 "use client";
+
 import { BiSearch } from "react-icons/bi";
 const Search = () => {
   return (
@@ -13,6 +14,9 @@ const Search = () => {
         hover:shadow-md
         transition
         cursor-pointer
+        flex
+        flex-row
+        items-center
       ">
       <div
         className="
@@ -40,7 +44,7 @@ const Search = () => {
           flex-1
           text-center
         ">
-          Any One
+          Any Week
         </div>
         <div
           className="
