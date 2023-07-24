@@ -5,5 +5,14 @@
 html,
 body,
 :root {
-    height: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: TwemojiMozilla;
+  src: url("/public/font/Twemoji.Mozilla.ttf");
+}
+/* Your Input Div*/
+.input {
+  font-family: TwemojiMozilla, Arial;
 }

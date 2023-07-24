@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "./Container";
+import Container from "../Container";
 import categories from "../constants/categoryList";
 import CategoryBox from "./CategoryBox";
 import { usePathname, useSearchParams } from "next/navigation";

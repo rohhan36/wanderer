@@ -1,14 +1,15 @@
 "use client";
 
-import { AiOutlineMenu } from "react-icons/ai";
-import Avatar from "../Avatar";
+import { SafeUser } from "@/app/types";
+import { signOut } from "next-auth/react";
 import { useState, useCallback } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+
+import Avatar from "../Avatar";
 import MenuItem from "../menu/MenuItem";
 import useRegisterModal from "../../hooks/userRegisterModal";
 import useLoginModal from "../../hooks/userLoginModal";
-import { User } from "@prisma/client";
-import { signOut } from "next-auth/react";
-import { SafeUser } from "@/app/types";
+import useRentModal from "@/app/hooks/useRentModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -17,17 +18,26 @@ interface UserMenuProps {
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const rentModal = useRentModal();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
 
+  const onRent = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
+
+    rentModal.onOpen();
+  }, [loginModal, currentUser, rentModal]);
+
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
-          onClick={() => {}}
+          onClick={onRent}
           className="
             hidden
             md:block
@@ -87,7 +97,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 <MenuItem onClick={() => {}} label="My Favorites" />
                 <MenuItem onClick={() => {}} label="My Reservation" />
                 <MenuItem onClick={() => {}} label="My Property" />
-                <MenuItem onClick={() => {}} label="Airbnb My Home" />
+                <MenuItem onClick={rentModal.onOpen} label="Airbnb My Home" />
                 <MenuItem onClick={() => signOut()} label="Logout" />
               </>
             ) : (
