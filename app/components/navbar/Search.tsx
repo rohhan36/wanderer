@@ -8,15 +8,12 @@ const Search = () => {
         border-[1px]
         w-full
         md:w-auto
-        py-1
+        py-2
         rounded-full
         shadow-sm
         hover:shadow-md
         transition
         cursor-pointer
-        flex
-        flex-row
-        items-center
       ">
       <div
         className="
