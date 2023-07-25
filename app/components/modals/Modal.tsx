@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { IoMdClose } from "react-icons/io";
-import Button from "../Button";
+import Button from "../buttons/Button";
 import { on } from "events";
 
 interface ModalProps {
@@ -146,10 +146,14 @@ const Modal: React.FC<ModalProps> = ({
               {/* FOOTER*/}
               <div className=" p-6 gap-2 flex flex-col">
                 <div className="flex flex-row items-center gap-4 w-full">
-                  <Button disabled={disabled} label={actionLabel} onClick={handelSubmit} />
                   {secondaryAction && secondaryActionLabel && (
-                    <Button disabled={disabled} label={secondaryActionLabel} onClick={handelSubmit} />
+                    <Button
+                      disabled={disabled}
+                      label={secondaryActionLabel}
+                      onClick={secondaryAction}
+                    />
                   )}
+                  <Button disabled={disabled} label={actionLabel} onClick={handelSubmit} />
                 </div>
                 {footer}
               </div>

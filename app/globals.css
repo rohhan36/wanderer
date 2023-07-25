@@ -16,3 +16,10 @@ body,
 .input {
   font-family: TwemojiMozilla, Arial;
 }
+
+.leaflet-button,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
