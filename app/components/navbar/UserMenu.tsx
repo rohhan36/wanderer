@@ -11,6 +11,7 @@ import useRegisterModal from "../../hooks/userRegisterModal";
 import useLoginModal from "../../hooks/userLoginModal";
 import useRentModal from "@/app/hooks/useRentModal";
 import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -34,6 +35,11 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
     rentModal.onOpen();
   }, [loginModal, currentUser, rentModal]);
+
+  const logoutHandle = async () => {
+    signOut();
+    toast.success("Logged out successfully");
+  };
 
   return (
     <div className="relative">
@@ -97,10 +103,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
               <>
                 <MenuItem onClick={() => router.push("/trips")} label="My Trips" />
                 <MenuItem onClick={() => {}} label="My Favorites" />
-                <MenuItem onClick={() => {}} label="My Reservation" />
+                <MenuItem onClick={() => router.push("/reservations")} label="My Reservation" />
                 <MenuItem onClick={() => {}} label="My Property" />
                 <MenuItem onClick={rentModal.onOpen} label="Airbnb My Home" />
-                <MenuItem onClick={() => signOut()} label="Logout" />
+                <MenuItem onClick={logoutHandle} label="Logout" />
               </>
             ) : (
               <>
