@@ -35,3 +35,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     </html>
   );
 }
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
