@@ -46,7 +46,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
           colors: {
             ...theme.colors,
             primary: "black",
-            primary25: "#ffe4e6",
+            primary25: "rgba(68,56,202, 0.1)",
           },
         })}
       />

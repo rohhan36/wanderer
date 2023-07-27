@@ -9,11 +9,12 @@ import TosterProvider from "./components/providers/TosterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/modals/RentModal";
+import SearchModal from "./components/modals/SearchModal";
 
 const inter = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next BNB",
+  title: "Wanderer",
   description: "Property renting website",
 };
 
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <body className={inter.className}>
         <TosterProvider />
+        <SearchModal />
         <RentModal />
         <LoginModal />
         <RegisterModal />

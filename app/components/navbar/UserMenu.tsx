@@ -7,8 +7,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 import Avatar from "../Avatar";
 import MenuItem from "../menu/MenuItem";
-import useRegisterModal from "../../hooks/userRegisterModal";
-import useLoginModal from "../../hooks/userLoginModal";
+import useRegisterModal from "../../hooks/useRegisterModal";
+import useLoginModal from "../../hooks/useLoginModal";
 import useRentModal from "@/app/hooks/useRentModal";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";

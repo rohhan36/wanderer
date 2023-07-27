@@ -13,9 +13,9 @@ const Logo = () => {
         router.push("/");
       }}
       className="hidden md:block cursor-pointer py-2"
-      height="100"
-      width="100"
-      src="/images/logo.png"
+      height="10"
+      width="150"
+      src="/Images/logo.png"
     />
   );
 };

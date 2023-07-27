@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import { Range } from "react-date-range";
 
-import useLoginModal from "@/app/hooks/userLoginModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeListing, SafeUser, SafeReservation } from "@/app/types";
 
 import Container from "@/app/components/Container";
