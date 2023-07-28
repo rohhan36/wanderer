@@ -12,6 +12,7 @@ interface ModalProps {
   title?: string;
   body?: React.ReactElement;
   footer?: React.ReactElement;
+  demoCredentials?: React.ReactElement;
   actionLabel: string;
   disabled?: boolean;
   secondaryAction?: () => void;
@@ -25,6 +26,7 @@ const Modal: React.FC<ModalProps> = ({
   title,
   body,
   footer,
+  demoCredentials,
   actionLabel,
   disabled,
   secondaryAction,
@@ -143,6 +145,8 @@ const Modal: React.FC<ModalProps> = ({
               </div>
               {/* BODY*/}
               <div className=" relative p-6 flex-auto">{body}</div>
+              {/* DEMO*/}
+              <div>{demoCredentials}</div>
               {/* FOOTER*/}
               <div className=" p-6 gap-2 flex flex-col">
                 <div className="flex flex-row items-center gap-4 w-full">

@@ -82,6 +82,15 @@ const LoginModal = () => {
     </div>
   );
 
+  const demoCredentials = (
+    <div className="flex flex-row items-center justify-center">
+      <div>
+        Login with these{" "}
+        <span className="text-red-500 font-semibold">(ID: demo@demo.com | Password: demo)</span>
+      </div>
+    </div>
+  );
+
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
@@ -101,7 +110,7 @@ const LoginModal = () => {
         className="
       text-neutral-500 text-center mt-4 font-light">
         <p>
-          First time using Airbnb?
+          First time using Wanderer?
           <span
             onClick={onToggle}
             className="
@@ -126,6 +135,7 @@ const LoginModal = () => {
       actionLabel="Continue"
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      demoCredentials={demoCredentials}
       body={bodyContent}
       footer={footerContent}
     />

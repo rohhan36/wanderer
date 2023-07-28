@@ -59,7 +59,7 @@ const RegisterModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome to Airbnb" subTitle="Create an account" />
+      <Heading title="Welcome to Wanderer" subTitle="Create an account" />
       <Input
         id="email"
         label="Email"
@@ -85,6 +85,17 @@ const RegisterModal = () => {
         errors={errors}
         required
       />
+    </div>
+  );
+
+  const demoCredentials = (
+    <div className="flex flex-row items-center justify-center">
+      <div>
+        <span className="hover:underline" onClick={onToggle}>
+          Login with these{" "}
+        </span>
+        <span className="text-red-500 font-semibold">(ID: demo@demo.com | Password: demo)</span>
+      </div>
     </div>
   );
 
@@ -129,6 +140,7 @@ const RegisterModal = () => {
       actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      demoCredentials={demoCredentials}
       body={bodyContent}
       footer={footerContent}
     />
